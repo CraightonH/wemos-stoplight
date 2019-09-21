@@ -114,6 +114,7 @@ void setup(void) {
 
   server.begin();
   Serial.println("HTTP server started");
+  cycle();
 }
 
 void loop(void) {
