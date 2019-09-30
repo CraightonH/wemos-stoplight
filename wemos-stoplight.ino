@@ -4,7 +4,7 @@
 #include <ESP8266mDNS.h>
 #import "html.h"
 
-bool CYCLE = false;
+bool CYCLE = true;
 long startOfCycleTime = millis();
 
 ESP8266WebServer server(80);
@@ -70,8 +70,8 @@ void cycle() {
 void findKnownWiFiNetworks() {
   ESP8266WiFiMulti wifiMulti;
   WiFi.mode(WIFI_STA);
+  wifiMulti.addAP("BYU-WiFi", "");
   wifiMulti.addAP("Hancock2.4G", "Arohanui");
-  wifiMulti.addAP("BYUWiFi", "");
   Serial.println("");
   Serial.print("Connecting to Wifi");
   while (WiFi.status() != WL_CONNECTED) {
